@@ -20,6 +20,6 @@ public class GameList implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Long Id;
+    private Long id;
     private String name;
 }

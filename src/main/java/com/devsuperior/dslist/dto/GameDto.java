@@ -9,7 +9,6 @@ import org.springframework.beans.BeanUtils;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Optional;
 
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -37,6 +36,7 @@ public class GameDto implements Serializable {
         /* BeanUtils
         * Usando o "copyProperties" para copiar os valores de cada campo.
         * Apenas se os nomes dos atriubtos forem iguais ao do Objeto copiado.
+        * Para Objetos com muitos campos.
         * */
     }
 }
