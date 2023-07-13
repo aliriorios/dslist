@@ -4,14 +4,18 @@ import com.devsuperior.dslist.entity.Game;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.beans.BeanUtils;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Optional;
 
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Getter
-public class GameMinDto implements Serializable {
+@Setter
+public class GameDto implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -19,15 +23,20 @@ public class GameMinDto implements Serializable {
     private Long id;
     private String title;
     private Integer year;
+    private String genre;
+    private String platforms;
+    private Double score;
     private String imgUrl;
     private String shortDescription;
+    private String longDescription;
 
     // constructor
-    public GameMinDto(Game game) {
-        id = game.getId();
-        title = game.getTitle();
-        year = game.getYear();
-        imgUrl = game.getImgUrl();
-        shortDescription = game.getShortDescription();
+    public GameDto(Game game) {
+        BeanUtils.copyProperties(game, this);
+
+        /* BeanUtils
+        * Usando o "copyProperties" para copiar os valores de cada campo.
+        * Apenas se os nomes dos atriubtos forem iguais ao do Objeto copiado.
+        * */
     }
 }
