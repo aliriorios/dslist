@@ -7,7 +7,7 @@ import java.io.Serial;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "games")
+@Table(name = "game")
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)

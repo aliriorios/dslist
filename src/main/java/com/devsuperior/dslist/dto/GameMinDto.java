@@ -1,6 +1,7 @@
 package com.devsuperior.dslist.dto;
 
 import com.devsuperior.dslist.entity.Game;
+import com.devsuperior.dslist.projections.GameMinProjection;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,5 +30,13 @@ public class GameMinDto implements Serializable {
         year = game.getYear();
         imgUrl = game.getImgUrl();
         shortDescription = game.getShortDescription();
+    }
+
+    public GameMinDto(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 }
